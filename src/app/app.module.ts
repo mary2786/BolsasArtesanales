@@ -11,6 +11,9 @@ import { BaglistComponent } from './components/baglist/baglist.component';
 import { BagdetailComponent } from './components/bagdetail/bagdetail.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './login/login.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BaglistComponent,
     BagdetailComponent,
     FiltersComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent,
+    LoginComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
