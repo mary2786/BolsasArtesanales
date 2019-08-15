@@ -14,6 +14,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './login/login.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     DashboardComponent,
     RegisterComponent,
     LoginComponent,
-    OrdersComponent
+    OrdersComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
