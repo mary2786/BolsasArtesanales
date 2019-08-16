@@ -12,4 +12,13 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  arrayIdRecibido = [];
+  idTipoFitlro;
+  enviarArrayFiltros(aId: []){
+    this.arrayIdRecibido = aId;
+  }
+
+  enviarTipoFiltro(idTipo: number){
+    this.idTipoFitlro = idTipo;
+  }
 }

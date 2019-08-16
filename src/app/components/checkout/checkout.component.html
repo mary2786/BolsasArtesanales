@@ -1,0 +1,129 @@
+<div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- breadcrumb-->
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/inicio">Inicio</a></li>
+                <li aria-current="page" class="breadcrumb-item active">Dirección de Facturación</li>
+              </ol>
+            </nav>
+          </div>
+          <div id="checkout" class="col-lg-9">
+            <div class="box">
+              <form method="get" action="checkout2.html">
+                <h1>Dirección de Facturación</h1>
+                <div class="nav flex-column flex-md-row nav-pills text-center"><a class="nav-link flex-sm-fill text-sm-center active"> <i class="fa fa-map-marker">                  </i>Dirección</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-truck">                       </i>Método de entrega</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-money">                      </i>Método de pago</a><a href="#" class="nav-link flex-sm-fill text-sm-center disabled"> <i class="fa fa-eye">                     </i>Confirmación de pedido</a></div>
+                <div class="content py-3">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="firstname">Nombres</label>
+                        <input id="firstname" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="lastname">Apellidos</label>
+                        <input id="lastname" type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.row-->
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="company">Calle</label>
+                        <input id="company" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="street">Cruzamientos</label>
+                        <input id="street" type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.row-->
+                  <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                      <div class="form-group">
+                        <label for="city">Colonia</label>
+                        <input id="city" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="form-group">
+                        <label for="zip">C.P.</label>
+                        <input id="zip" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="form-group">
+                        <label for="state">Estado</label>
+                        <select id="state" class="form-control"></select>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                      <div class="form-group">
+                        <label for="country">Ciudad</label>
+                        <select id="country" class="form-control"></select>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input id="phone" type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.row-->
+                </div>
+                <div class="box-footer d-flex justify-content-between"><a routerLink="/carrito" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i>Regresar al carrito</a>
+                  <button type="submit" class="btn btn-primary">Continuar a Método de entrega<i class="fa fa-chevron-right"></i></button>
+                </div>
+              </form>
+            </div>
+            <!-- /.box-->
+          </div>
+          <!-- /.col-lg-9-->
+          <div class="col-lg-3">
+            <div id="order-summary" class="card">
+              <div class="card-header">
+                <h3 class="mt-4 mb-4">Resumen de la orden</h3>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>Subtotal</td>
+                        <th>{{ subtotal | currency }}</th>
+                      </tr>
+                      <tr>
+                        <td>Costo de envío</td>
+                        <th>$20.00</th>
+                      </tr>
+                      <tr>
+                        <td>IVA</td>
+                        <th>{{ iva | currency }}</th>
+                      </tr>
+                      <tr class="total">
+                        <td>Total</td>
+                        <th>{{ total | currency }}</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-lg-3-->
+        </div>
+      </div>

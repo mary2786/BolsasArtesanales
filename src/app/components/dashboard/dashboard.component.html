@@ -1,11 +1,13 @@
+<app-slider></app-slider>
 <div class="container my-5">
         
-    <div class="row">
-        <div class="col-md-4">
-            <app-filters></app-filters>
-        </div>
-        <div class="col-md-8">
-            <app-baglist></app-baglist>
+        <div class="row">
+            <div class="col-md-3">
+                <app-filters (arrayFiltros)="enviarArrayFiltros($event)" (tipoFiltro)="enviarTipoFiltro($event)"></app-filters>
+            </div>
+            <div class="col-md-9">
+                <app-baglist [arrayId]="arrayIdRecibido" [idTipoF]="idTipoFitlro"></app-baglist>
+            </div>
         </div>
     </div>
-</div>
+    

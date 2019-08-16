@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- breadcrumb-->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a routerLink="/inicio">Inicio</a></li>
+            <li aria-current="page" class="breadcrumb-item active">Carrito de compra</li>
+          </ol>
+        </nav>
+      </div>
+      <div id="basket" class="col-lg-9">
+        <div class="box">
+          <form method="post" action="checkout1.html">
+            <h1>Carrito de compra</h1>
+            <p class="text-muted">Actualmente tienes {{baglist.length}} artículo(s) en tu carrito.</p>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Artículo</th>
+                    <th>Cantidad</th>
+                    <th>Precio unitario</th>
+                    <th>Descuento</th>
+                    <th colspan="2">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of baglist; let idx = index">
+                    <td><a href="#"><img src="{{item.image}}" alt="{{item.name}}"></a></td>
+                    <td><a href="#">{{item.name}}</a></td>
+                    <td>
+                      <input [(ngModel)]="baglist[idx].cantidad" type="number" value="{{ baglist[idx].cantidad}}" class="form-control" [ngModelOptions]="{standalone: true}" (change)="getTotal()">
+                    </td>
+                    <td>{{item.price | currency }}</td>
+                    <td>$0.00</td>
+                    <td>{{ item.price * item.cantidad | currency }}</td>
+                    <td><a class="btn btn-danger" (click)="removeCart(idx)"><i class="fa fa-trash-o"></i></a></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th colspan="5">Total</th>
+                    <th colspan="2">{{ subtotal | currency }}</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.table-responsive-->
+            <div class="box-footer d-flex justify-content-between flex-column flex-lg-row">
+              <div class="left"><a routerLink="/inicio" class="btn btn-outline-secondary"><i class="fa fa-chevron-left"></i> Continuar comprando</a></div>
+              <div class="right">
+                <button type="button" class="btn btn-primary" (click)="verifyLogin()">Pagar<i class="fa fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- /.box-->
+      </div>
+      <!-- /.col-lg-9-->
+      <div class="col-lg-3">
+        <div id="order-summary" class="box">
+          <div class="box-header">
+            <h3 class="mb-0">Resumen de la compra</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Subtotal</td>
+                  <th>{{ subtotal | currency }}</th>
+                </tr>
+                <tr>
+                  <td>Costo de envío</td>
+                  <th>$20.00</th>
+                </tr>
+                <tr>
+                  <td>IVA</td>
+                  <th>{{ iva | currency }}</th>
+                </tr>
+                <tr class="total">
+                  <td>Total</td>
+                  <th>{{ total | currency }}</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-3-->
+    </div>
+  </div>
